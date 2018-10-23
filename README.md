@@ -7,9 +7,11 @@ In this exercise we are going to go over stepping through Truffle tests using th
 
 ### Getting Started
 
-Navigate to the [project-dir](./project-dir). This directory is the example project directory. In it you will find a SimpleStorage contract, a migrations script to deploy the SimpleStorage contract and a test to make sure that the SimpleStorage contract is behaving as expected.
+Clone this repository to your local machine and navigate to the [project-dir](./project-dir). 
 
-Read the [simpleStorageTest.js](./project-dir/test/simpleStorageTest.js) file so you understand how the test is operating. 
+This directory is the example project directory. In it you will find a SimpleStorage contract, a migrations script to deploy the SimpleStorage contract and a test to make sure that the SimpleStorage contract is behaving as expected.
+
+Read the [simpleStorageTest.js](./project-dir/test/simpleStorageTest.js) file so you understand how the test functions. 
 
 ```javascript
 contract('SimpleStorage', async (accounts) => {
@@ -24,8 +26,7 @@ contract('SimpleStorage', async (accounts) => {
     })
 })
 ```
-In the test we are updating the storedData storage variable in the SimpleStorage.sol contract and then retrieving the variable to make sure 
-that it updated correctly.
+In the test we are updating the storedData storage variable in the SimpleStorage.sol contract and then retrieving the variable to make sure that it updated correctly.
 
 To run the test, in a new terminal window, start `ganache-cli`, or use the [Ganache GUI](https://truffleframework.com/ganache). With ganache-cli running, deploy the contract and run the tests by typing `$ truffle test`. 
 
@@ -44,7 +45,7 @@ Console output:
      AssertionError: The returned value should equal the new value.: expected 2 to equal { Object (s, e, ...) }
 ```     
 
-Our test is failing for some reason! It looks like there is an assertion error, but why is this error happening? Let's use the Truffle debugger to investigate.
+The test is failing for some reason! It looks like there is an assertion error, but why is this error happening? Let's use the Truffle debugger to investigate.
 
 Navigate back to the terminal that is running ganache-cli, or to the Ganache GUI. We are looking for a transaction hash to give to the debugger so it knows which transaction we want to debug.
 
