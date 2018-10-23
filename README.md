@@ -11,7 +11,7 @@ Navigate to the [project-dir](./project-dir). This directory is the example proj
 
 Read the [simpleStorageTest.js](./project-dir/test/simpleStorageTest.js) file so you understand how the test is operating. 
 
-```
+```javascript
 contract('SimpleStorage', async (accounts) => {
     it('Calling set(x) should set storedData in storage to x', async() => {
         let newValue = 2;
